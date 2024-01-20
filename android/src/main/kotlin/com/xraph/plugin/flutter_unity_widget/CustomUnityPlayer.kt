@@ -16,6 +16,17 @@ class CustomUnityPlayer(context: Activity, upl: IUnityPlayerLifecycleEvents?) : 
         internal const val LOG_TAG = "CustomUnityPlayer"
     }
 
+    /**
+     * An empty method to prevent
+     * java.lang.NoSuchMethodError: no non-static method "Lcom/xraph/plugin/flutter_unity_widget/CustomUnityPlayer;.hidePreservedContent()V
+     * https://github.com/juicycleff/flutter-unity-view-widget/issues/903
+     */
+    fun hidePreservedContent() {
+        // Implement content hiding logic here
+        // Example:
+        // this.setVisibility(View.GONE);
+    }
+
     override fun onConfigurationChanged(newConfig: Configuration?) {
         Log.i(LOG_TAG, "ORIENTATION CHANGED")
         super.onConfigurationChanged(newConfig)
